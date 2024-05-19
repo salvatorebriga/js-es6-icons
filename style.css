@@ -4,3 +4,32 @@
     box-sizing: border-box;
     font-family: 'Rubik', sans-serif;
 }
+
+header{
+    padding: 10px;
+    padding-top: 20px;
+}
+
+header > h1{
+    color: #29b1dd;
+    font-size: 50px;
+}
+
+#jumbo-container{
+    display: flex;
+    background-color: #29b1dd;
+    color: white;
+    text-align: center;
+    justify-content: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+#jumbo-container > select{
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+#icon-container{
+    margin: 0 auto;
+}
