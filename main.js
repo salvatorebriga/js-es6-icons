@@ -112,3 +112,26 @@ const icon = [
       color: 'blue',
     },
 ];
+
+const filter = document.getElementById('filter');
+const iconContainer = document.getElementById('icon-container');
+
+window.addEventListener('load', () => {
+    changeContent();
+});
+
+filter.addEventListener('change', () => {
+    changeContent();
+});
+
+function changeContent() {
+    icon.forEach(element => {
+        const div = document.createElement('div');
+        div.classList.add('col');
+        const i = document.createElement('i');
+        i.classList.add(`${element.family}`);
+        i.classList.add(`${element.prefix}${element.name}`);
+        div.appendChild(i);
+        iconContainer.appendChild(div);
+    });
+}
