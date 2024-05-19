@@ -1,21 +1,21 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Rubik', sans-serif;
 }
 
-header{
+header {
     padding: 10px;
     padding-top: 20px;
 }
 
-header > h1{
+header > h1 {
     color: #29b1dd;
     font-size: 50px;
 }
 
-#jumbo-container{
+#jumbo-container {
     display: flex;
     background-color: #29b1dd;
     color: white;
@@ -25,11 +25,25 @@ header > h1{
     padding-bottom: 30px;
 }
 
-#jumbo-container > select{
+#jumbo-container > select {
     font-size: 20px;
     margin-left: 20px;
 }
 
-#icon-container{
+#icon-container {
     margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col {
+    margin: 20px;
+    width: calc(100% / 5 - 40px);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.col > i {
+    font-size: 50px;
 }
