@@ -129,55 +129,27 @@ filter.addEventListener("change", () => {
 function changeContent(filter) {
   iconContainer.innerHTML = "";
   icon.forEach((element) => {
-    const div = document.createElement("div");
-    const i = document.createElement("i");
-    const h3 = document.createElement("h3");
-    switch (filter) {
-      case "all":
-        div.classList.add("col");
-        i.classList.add(`${element.family}`);
-        i.classList.add(`${element.prefix}${element.name}`);
-        i.style.color = element.color;
-        h3.innerText = element.name;
-        div.appendChild(i);
-        div.appendChild(h3);
-        iconContainer.appendChild(div);
-
-      case "animal":
-        if (element.type === filter) {
-          div.classList.add("col");
-          i.classList.add(`${element.family}`);
-          i.classList.add(`${element.prefix}${element.name}`);
-          i.style.color = element.color;
-          h3.innerText = element.name;
-          div.appendChild(i);
-          div.appendChild(h3);
-          iconContainer.appendChild(div);
-        }
-
-      case "vegetable":
-        if (element.type === filter) {
-          div.classList.add("col");
-          i.classList.add(`${element.family}`);
-          i.classList.add(`${element.prefix}${element.name}`);
-          i.style.color = element.color;
-          h3.innerText = element.name;
-          div.appendChild(i);
-          div.appendChild(h3);
-          iconContainer.appendChild(div);
-        }
-
-      case "user":
-        if (element.type === filter) {
-          div.classList.add("col");
-          i.classList.add(`${element.family}`);
-          i.classList.add(`${element.prefix}${element.name}`);
-          i.style.color = element.color;
-          h3.innerText = element.name;
-          div.appendChild(i);
-          div.appendChild(h3);
-          iconContainer.appendChild(div);
-        }
+    if (filter === "all") {
+      createDiv(element);
+    }
+    if (filter === element.type) {
+      createDiv(element);
     }
   });
+}
+
+function createDiv(element) {
+  const div = document.createElement("div");
+  const i = document.createElement("i");
+  const h3 = document.createElement("h3");
+
+  div.classList.add("col");
+  i.classList.add(`${element.family}`);
+  i.classList.add(`${element.prefix}${element.name}`);
+  i.style.color = element.color;
+  h3.innerHTML = element.name;
+  h3.innerHTML = h3.innerHTML.toUpperCase();
+  div.appendChild(i);
+  div.appendChild(h3);
+  iconContainer.appendChild(div);
 }
