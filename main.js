@@ -117,6 +117,7 @@ const filter = document.getElementById("filter");
 const iconContainer = document.getElementById("icon-container");
 
 window.addEventListener("load", () => {
+  fillSelect();
   const filterValue = document.getElementById("filter").value;
   changeContent(filterValue);
 });
@@ -135,6 +136,26 @@ function changeContent(filter) {
     if (filter === element.type) {
       createDiv(element);
     }
+  });
+}
+
+function fillSelect() {
+  const newOption = ["all"];
+  icon.forEach((element) => {
+    if (!newOption.includes(element.type)) {
+      newOption.push(element.type);
+    }
+  });
+  createOption(newOption);
+}
+
+function createOption(selectOption) {
+  const select = document.getElementById("filter");
+  selectOption.forEach((element) => {
+    const option = document.createElement("option");
+    option.value = element;
+    option.innerHTML = element;
+    select.appendChild(option);
   });
 }
 
